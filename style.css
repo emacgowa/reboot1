@@ -1,0 +1,1034 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+/*
+body {
+	position: relative;
+}*/
+:root{/*Just so we know the colors, also variables in firefox, chrome disabled css variables recently */
+    --green-color:rgba(181,191,52,0.9);
+    --blue-color:rgba(21,115,186,0.9);
+    --purple-color:rgba(87,45,136,0.9);
+    --orange-color:rgba(232,133,36,0.9);
+    --lblue-color:rgba(23,156,167,0.9);
+    --pink-color:rgba(237,39,147,1);
+}
+a{
+    text-decoration: none;
+    outline:0;
+}
+.sScroll{
+    border: 0;
+    color:rgba(0,0,0,0);
+    outline:0;
+
+}
+ul{
+    text-decoration: none;
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+li{
+    text-decoration: none;
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+section{
+    width:100%;
+}
+nav {
+    position: fixed;
+    width: 100%;
+    box-shadow:0px 1px 3px #A29393;
+    background-color: rgba(255, 255, 255, 0.95);
+    height: 60px;
+    z-index: 1;
+}
+
+/*nav a:hover {
+    float:left;
+    height: 38px;
+    margin-left: 22px;
+    margin-top: 10px;
+    display: block;
+} make this hover so that the logo becomes orange when you hover over it*/
+nav img {
+    float:left;
+    height: 38px;
+    margin-left: 22px;
+    margin-top: 10px;
+    display: block;
+}
+
+nav ul {
+    float:right;
+}
+.splash {
+    height: 800px;
+    text-align:center;
+}
+
+@media screen and (max-width : 800px){
+    nav.mobileNav{
+        display:block;
+    }
+    nav.mainNav{
+        display:none;
+    }
+}
+.mobileNav{
+    display:none;
+}
+.mainNav{
+    display:block;
+}
+.collapsed{
+    display:none !important;
+}
+.mbtn{
+    display:block;
+    margin:auto;
+    padding-top:20px;
+    padding-bottom:20px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.95);
+    width:100%;
+    border-top-style: solid;
+    border-color:#A29393;
+    border-width:2px;
+}
+.mobileNav .sub-menu{
+    width:100%;
+    margin:auto;
+    position: absolute;
+    top: 60px;
+}
+
+.mobileNav i.fa-bars{
+    font-size:20px;
+    position: absolute;
+    top:30px;
+    right:30px;
+}
+
+
+.menuOpen{
+    cursor:pointer;
+    width: 50px;
+    height: 50px;
+    display:block;
+    position:absolute;
+    top:-5px;
+    right: 20px;
+}
+.mobileNav i.fa-bars {
+    font-size: 30px;
+    position: absolute;
+    top: 16px;
+    right: 8px;
+    color: #A29393;
+}
+.splash h1 {
+    margin: auto;
+    font-size: 20px;
+    padding-top: 524px;
+    color: white;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 200;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+}
+
+.splash  h2 {
+    margin:auto;
+    color: white;
+    font-family: 'Indie Flower', sans-serif;
+    font-size: 17px;
+    font-weight: 200;
+    letter-spacing: 7px;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+
+i.fa.fa-chevron-down {
+    font-size: 38px;
+    padding-top: 44px;
+    color: white;
+}
+
+
+.logo {
+	/*margin: 100px;*/
+
+	width: 273px;
+	height: auto;
+    position:absolute;
+    top: 225px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+	/*the above line of code corresponds to position: relative in the body selector*/
+
+
+}
+
+header h1 {
+	text-align: center;
+
+}
+
+nav ul {
+    text-align: right;
+    margin: 20px;
+    margin-right: 15px;
+}
+
+nav ul li {
+	display: inline;
+	/*text-align: right;*/
+}
+
+nav ul li a {
+    color: #686B68;
+    text-decoration: none;
+    padding: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/*section.about h1 {
+	color: white;
+	text-transform:uppercase;
+	font-family: 'Istok Web', sans-serif;
+	margin: 0;
+    font-size:25px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    padding-top: 63px;
+    text-align: center;
+} alternate design*/
+.anchor{
+    display:block;
+    visibility: hidden;
+    position:relative;
+    top:-60px;
+}
+section.about {
+    background: #FFFFFF;
+    padding-bottom:30px;
+}
+section.about h1 {
+    color: #C1AAAA;
+    text-transform: uppercase;
+    font-family: 'Istok Web', sans-serif;
+    margin: 0;
+    font-size: 25px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    padding-top: 63px;
+    text-align: center;
+}
+
+/*section.about h2 {
+    font-family: 'Nunito', sans-serif;
+    color: #EFEEEE;
+    font-weight: 100;
+    font-size: 17px;
+    margin-top: 31px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 23px;
+    padding-top: 35px;
+} alterate design*/
+
+section.about h2,section.more h2, section.footer h2, .contactBar h2{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 100;
+    font-size: 17px;
+    margin-top: 31px;
+    max-width: 868px;
+    margin: 0 auto;
+    line-height: 23px;
+    padding-top: 35px;
+    padding-bottom: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: justify;
+}
+section.about h2{
+    color:#A29393;
+}
+section.footer h2{
+    text-align: center;
+    padding:0px;
+    margin-top:5px;
+    margin-bottom:5px;
+    color:#A29393;
+    }
+section.more h2{
+    color:white;
+}
+section.about div.faculties {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+section.about div.faculties img {
+    border: 0;
+    width: 100px;
+    height: 100px;
+    margin: 0px 13px;
+}
+
+/*.highlight1 {
+    color: #FFF9F4;
+    font-size: 28px;
+} alternate design*/
+
+.highlight1 {
+    color: #F3B27D;
+    font-size: 28px;
+}
+section.more{
+
+        overflow:auto;
+    text-align: center;
+    background-color:#A29393;
+}
+.more h1{
+        color: #FFF;
+    text-transform: uppercase;
+    font-family: 'Istok Web', sans-serif;
+    margin-top: 40px;
+    font-size: 25px;
+    font-weight: 200;
+    letter-spacing: 5px;
+        text-align: center;
+        margin-bottom:10px;
+}
+.info{
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:5%;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+
+.info ul{
+    vertical-align: middle;
+    margin:auto;
+    list-style: none;
+}
+.info button{
+    background-color:rgba(0,0,0,0);
+    border-color:white;
+    border-style:solid;
+    border-radius:0px;
+    color:white;
+    height:75px;
+
+    width:20%;
+    min-width:200px;
+}
+.footer button{
+        background-color:rgba(0,0,0,0);
+    border-color:#A29393;
+    border-style:solid;
+    border-radius:0px;
+    color:#A29393;
+    height:75px;
+    margin-top: 10px;
+    width:20%;
+    min-width:200px;
+    transition: background 0.5s, color 0.5s;
+}
+.footer button:hover {
+    background-color: #F57F23;
+    color: #FFF;
+}
+.info li:nth-child(1) button:hover, .info li:nth-child(1) .active {
+    background-color: rgba(127, 98, 170, 0.9);
+}
+.info li:nth-child(2) button:hover, .info li:nth-child(2) .active {
+    background-color: rgba(214, 216, 76, 0.61);
+}
+.info li:nth-child(3) button:hover, .info li:nth-child(3) .active {
+    background-color: rgba(245, 73, 166, 0.46);
+}
+.info .purple {
+    font-weight: bold;
+    color: rgb(114, 80, 160);
+}
+.info .green {
+    font-weight: bold;
+    color: rgb(208, 203, 123);
+}
+.info .pink {
+    font-weight: bold;
+    color: rgba(171, 36, 109, 0.62);
+}
+.info div.active{
+    display:static;
+}
+.info div.inactive{
+    display:none;
+}
+.info div h2{
+    padding-top:35px;
+    padding-bottom:10px;
+}
+.info div h2.emp{
+    padding-top:10px;
+    text-align: center;
+    padding-bottom:10px;
+}
+
+.info ul li {
+    margin: 25px;
+    display: inline-block;
+}
+section.gal{
+    padding-bottom:40px;
+    background-color:#A29393;
+}
+section.footer{
+    background: #FFF;
+    text-align: center;
+    padding:20px;
+}
+section.footer2{
+    margin-top: 20px;
+}
+section.footer2 h1{
+    margin-bottom: 10px !important;
+}
+
+section.footer2 a:hover h1{
+    color: #F57F22;
+}
+
+section.footer img{
+    position:inline;
+    margin:auto;
+    width:auto;
+    height:50px;
+}
+section.footer h1{
+            color:  #A29393;
+    text-transform: uppercase;
+    font-family: 'Istok Web', sans-serif;
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 200;
+    letter-spacing: 5px;
+        text-align: center;
+        margin-bottom:20px;
+}
+
+.mainbg{
+    background:url(images/deskblur.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.joinbg{
+    background:url(images/bg/get_involved.jpeg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.aboutbg{
+    background:url(images/bg/about_us.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.main .wrapper{
+    position:absolute;
+    top:60px;
+    width:100%;
+}
+
+div.wrapper {
+    text-align: center;
+}
+div.space{
+    height:150px;
+}
+div.space h1{
+
+}
+div.Lcontent {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom:40px;
+    padding:20px;
+    background-color: rgba(0,0,0,0);
+    color:#FFF;
+}
+hr{
+    border-width:1px;
+    border-style:solid;
+    border-color:white;
+    width:50%;
+}
+div.Lcontent h1 {
+    position:relative;
+    color:white;
+    font-family:"Istok Web";
+    letter-spacing: 17px;
+    color:#FFF;
+    text-transform: uppercase;
+}
+
+div.Lcontent p {
+    font-family: 'Nunito', sans-serif;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: justify;
+
+}
+
+div.Lcontent img {
+    width: 100%;
+    padding-top: 10%;
+}
+div.Lcontent p:last-child{
+    text-align: center;
+}
+.team{
+    top:100vh;
+}
+.title{
+    text-align: center;
+    width:100%;
+    color:white;
+    font-family: 'Istok Web', sans-serif;
+    letter-spacing: 14px;
+    text-transform: uppercase;
+    font-size:1.05em;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:30px;
+    margin-bottom:30px;
+    padding:20px;
+}
+.title h1{
+    margin:0px;
+}
+.teamDiv{
+    display:inline-block;
+    font-family: 'Istok Web', sans-serif;
+     margin-bottom:20px;
+   /* max-width:1000px;*/
+    margin:auto;
+    font-style:normal;
+    text-align: center;
+    color:#555;
+}
+
+.teamlist h1{
+    font-size:18pt;
+    font-weight:normal ;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    display:inline;
+}
+.teamlist h2{
+    font-size:16pt;
+        font-weight:lighter; ;
+}
+
+.teamlist h3{
+    font-size:14pt;
+    font-weight:normal ;
+}
+
+.teamlist h4{
+    font-size:12pt;
+    font-weight:lighter;
+}
+.teamList li a{
+    color:#555;
+}
+
+.teamList li a:hover {
+    color: #6D6CAD;
+    /*alternate color: #F57F22 like logo*/
+}
+
+.teamList li{
+    display:inline-block;
+    background-color:rgba(255,255,255,0.8);
+    padding:10px;
+    border-radius:0px;
+    margin:15px;
+    padding:25px;
+    width:40%;
+    vertical-align: top;
+    min-height: 300px;
+    min-width: 300px;
+}
+.teamList li img{
+    width:100px;
+    height:100px;
+    display:block;
+    margin:auto;
+    margin-bottom: 10px;
+    border-radius:50%;
+}
+
+.teamDiv .teamList div.fixedheight {
+    height: 100px;
+}
+
+.teamDiv .teamList div.fixedheight a {
+    vertical-align:middle;
+}
+
+.post {
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    text-align: justify;
+    max-width: 900px;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 0px;
+    padding: 60px 115px 115px 115px;
+    color: #655;
+    background-color: rgba(255,255,255,0.9);
+}
+.post a{
+    color:#000;
+    font-weight: bold;
+}
+
+.post h1 {
+    font-family: "Istok Web";
+    text-align:center;
+    letter-spacing: 17px;
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+.post .center{
+    text-align:center;
+}
+
+.post p {
+    font-size: 14px;
+}
+
+.post h1, .post h2, .post h3, .post h4{
+    font-family:"Istok Web";
+    margin:0;
+    font-weight:normal;
+    color: #655;
+}
+.post h1 {
+    font-size: 18pt;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 60px 0px 0px 0px;
+}
+.post h2 {
+    font-size:12pt;
+    font-weight:bold;
+}
+.post strong{
+    font-weight: normal;
+    font-size:12pt;
+    color:rgba(232,133,36,1);;
+
+}
+.post h4 {
+    text-align: right;
+    font-size:12pt;
+    color:#CBB;
+  /*  position: absolute;
+    top: 50px;
+    right: 112px;*/
+}
+
+.post h4.left {
+ float: left;   
+}
+
+.post h4.right {
+    float: right;
+}
+
+.fb-spacer{
+    display: block;
+    text-align: center;
+    margin:auto;
+}
+.tall{
+    width:30%;
+}
+.ftr{
+    width:45%;
+}
+.col-l {
+    direction: rtl;
+}
+
+.mediabreak {
+    display: none;
+}
+
+.coltall .col{
+    margin: 10px;
+    width: calc(33.33% - 20px);
+}
+
+.col {
+    text-align: center;
+    vertical-align: top;
+    float: left;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.8);
+}
+
+.foot, .coltall {
+    max-width: 1260px;
+    margin: auto;
+    display: flex;
+}
+
+.minheight1 {
+    width: calc(50% - 20px);
+    margin: 10px;
+}
+
+.minheight2 {
+    min-height: 455px;
+}
+
+.fullwidth {
+    margin: 1%;
+}
+
+.fullwidth h1 {
+    font-size: 58px;
+    text-shadow: 1px 2px 12px #6B6B6B;
+    color: white;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 200;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    padding: 148px;
+}
+
+.col h1{
+    margin: auto;
+    font-size: 20px;
+    color: #A29393;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 200;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+}
+.col h2{
+    font-size: 15px;
+    color: #A29393;
+    font-weight: normal;
+    font-family: 'Istok Web', sans-serif;
+}
+.col h4{
+    font-family: "Nunito", sans-serif;
+    color: #A29393;
+    font-size: 20 px;
+}
+.col p{
+    font-family: "Istok Web",sans-serif;
+    color:#A29393;
+    font-size: 15px;
+}
+.thumb{
+    display:inline-block;
+    padding:13px;
+    margin:20px;
+    border-color:#A29393;
+    border-style: solid;
+    border-width:2px;
+    border-radius:20px;
+    color:#A29393;
+    font-family: "Nunito", sans-serif;
+}
+.thumb p{
+    margin:0px;
+    padding:0px;
+    vertical-align: middle;
+}
+.thumb-rect{
+    width:150px;
+    height:75px;
+    vertical-align: middle;
+}
+.thumb-logo{
+    width:auto;
+    height:75px;
+    vertical-align: middle;
+}
+.thumb-cal{
+       width:100px;
+    height:100px;
+}
+
+.thumb-cal p:first-child{
+    text-transform: uppercase;
+    font-size: 25px;
+}
+.thumb-cal p:last-child{
+    font-size:40px;
+}
+.content .title{
+    display:inline-block;
+    margin-top: 200px;
+}
+.content .contactBar {
+    display: inline-block;
+    margin-top: 48px;
+    background-color: rgba(255,255,255,0.8);
+    color: #A29393;
+    font-weight: bold;
+    width:550px;
+    max-width: 90%;
+    min-width: 40%;
+    padding: 30px;
+    border-radius: 0px;
+}
+
+.contactBar h2, a{
+    display:inline;
+}
+.contactBar h2{
+    margin-left: 25%
+}
+.contactBar a{
+    color:#A29393;
+}
+.contactBar{
+    text-align: left;
+}
+
+.contactBar form {
+    text-align: center;
+}
+
+.contactBar form p{
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 200;
+}
+
+.contactBar form p a{
+    text-decoration: underline;
+    
+}
+
+.contactBar form div {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contactBar form div ul li {
+    display: inline;
+    padding: 20px;
+}
+
+.contactBar form li i {
+    color: black;
+    font-size: 30px;
+}
+
+/*contact form begins*/
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body { background:rgb(30,30,40); }
+form { max-width:420px; margin:50px auto; }
+
+.feedback-input {
+    color: #A29393;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border: 2px solid grey;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.feedback-input:focus { border:2px solid #36302E; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+[type="submit"] {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    width: 100%;
+    background: #FB9D53;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.3s;
+    margin-top: -4px;
+    font-weight: 700;
+}
+[type="submit"]:hover {
+    background-color: #FE8424;
+}
+
+
+@media (max-width:1300px){
+    section.about div.faculties {
+        width: 70%;
+    }
+
+    section.about div.faculties img {
+        width: 90px;
+        height: 90px;
+    }
+
+}
+
+@media (max-width:1060px){
+    section.about div.faculties {
+        width: 45%;
+    }
+}
+
+@media (max-width:815px){
+    .mediabreak {
+        display: inline;
+    } 
+}
+
+@media (max-width:800px){
+    section.about div.faculties {
+        width: 59%;
+    }
+
+    .post {
+        padding: 100px 70px 70px 70px;
+    }
+
+    .coltall {
+        display: block;
+    }
+
+    .coltall .col {
+        width: calc(100% - 20px);
+    }
+}
+
+@media (max-width:605px){
+    section.about div.faculties {
+        width: 72%;
+    }
+
+    section.about div.faculties img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .logo {
+        width: 250px;
+        top: 148px;
+    }
+
+    .splash h1 {
+        padding-top: 420px;
+        font-size: 16px;
+    }
+
+    .splash h2 {
+        font-size: 13px;
+    }
+
+    section.about h2 {
+        text-align:center;
+    }
+
+    .info div h2 {
+        text-align:center;
+    }
+
+    /*About us section for mobile*/
+
+    div.Lcontent p {
+        text-align:center;
+    }
+
+    .fullwidth h1 {
+        padding-top: 148px;
+        padding-bottom: 148px;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 auto;
+    }
+
+    .post {
+        width: 100%;
+        padding: 95px 40px 40px 40px;
+    }
+}
+
+@media (max-width:550px){
+    .foot, .colltall {
+        flex-direction: column;
+    }
+
+    .mediabreak {
+        display: none;
+    }
+
+    .minheight1 {
+        width: calc(100% - 20px);
+    }
+}
+
+@media (max-width:455px){
+    section.about div.faculties {
+        width: 78%;
+    }
+
+    section.about div.faculties img{
+        margin: 3px;
+    }
+
+    .title {
+        letter-spacing: 11px;
+    }
+}

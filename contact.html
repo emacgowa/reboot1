@@ -1,0 +1,130 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content ="reboot"/>
+    <meta property="og:url" content ="http://reboot.build"/>
+	<meta property="og:image" content ="http://reboot.build/images/logo.png"/>
+	<link rel = "shortcut icon" href = "favicon.png"/>
+	<title>Contact Us</title>
+	<link rel="stylesheet" href="hover.css">
+	<link href='http://fonts.googleapis.com/css?family=Patrick+Hand|Indie+Flower|Istok+Web|Roboto+Condensed:300italic,400,300|Oxygen:400,300|Nunito:400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="flickity-docs/flickity.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="script.js"></script> 
+	<script src="flickity-docs/flickity.pkgd.min.js"></script>
+</head>
+<body class = "mainbg">
+	<header class="home" id="home">
+		<nav class = "mainNav">
+					<a href="index.html"><img src="images/reboot.png"></a>
+			<ul class="sub-menu">
+				<li><a class="hvr-pulse" href="index.html">Home</a></li>
+				<li><a class="hvr-pulse" href="about.html">About Us</a></li>
+				<li><a class="hvr-pulse" href="join.html">Join the Club</a></li>
+				<li><a class="hvr-pulse" href="blog.html">Blog</a></li>
+				<li><a class="hvr-pulse" href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+		<nav class = "mobileNav">
+				<a href="index.html"><img src="images/reboot.png"></a>
+				<i class="menuOpen fa fa-bars" onclick="openMenu();"></i>
+			<ul class="sub-menu">
+
+				<li class = "collapsed mbtn"><a class="hvr-pulse" href="index.html">Home</a></li>
+				<li class = "collapsed mbtn"><a class="hvr-pulse" href="about.html">About Us</a></li>
+				<li class = "collapsed mbtn"><a class="hvr-pulse" href="join.html">Join the Club</a></li>
+				<li class = "collapsed mbtn"><a class="hvr-pulse" href="blog.html">Blog</a></li>
+				<li class = "collapsed mbtn"><a class="hvr-pulse" href="contact.html">Contact</a></li>
+				<li class = "collapsed mbtn"> <i class="fa fa-chevron-up" onclick="closeMenu()"></i></li>
+			</ul>
+		</nav>
+	</header>
+	<section class ="main">
+		<div class="wrapper">
+		<div class ="content">
+			<div class = "contactBar"> 
+				
+				
+				<form action = "sendmail.php" method ="get">
+					<div id="icons">
+					 	<ul >
+					 		<li><a href="https://twitter.com/UWReboot" target = "_blank"><i class="fa fa-twitter"></i></a></li>
+					 		<li><a href="https://www.facebook.com/reboot.UW" target = "_blank"><i class="fa fa-facebook"></i></a></li>
+					 		<li><a href=""><i class="fa fa-envelope-o"></i></a></li>
+					 	</ul>
+					</div>
+				  	<input name="name" type="text" class="feedback-input" placeholder="Name" />   
+				  	<input name="email" id="email" type="text" class="feedback-input" placeholder="Email" />
+				  	<textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+				 	<input type="submit" value="SUBMIT"/>
+				 	<p>Need to get in touch with someone specific? 
+				 	<br>Head over to our <a href="about.html#exec">About Us</a> page.</p>
+				</form>
+			</div>
+			<!-- <h2> Location </h2>
+			<h2> Phone </h2>
+			<h2> Email </h2>
+			<h2> Right Here </h2> -->
+		</div>
+	</section>
+	
+	
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+
+	<script type="text/javascript">
+    
+        function checkEmail($email) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return ($email.length >0 && regex.test($email));
+        };
+        
+       
+        
+    
+        function validation(event){
+             
+            var $email = $("#email").val();
+            if(checkEmail($email)){
+                
+                $("#icons").prepend("<p>Thank you for your submission! Our team will get back to you shortly.</p>")
+            }
+            
+            else{
+                
+                $("#icons").prepend("<p>An error has occured. Please double check your submission and try again!</p>")
+                
+            }
+            
+            
+            
+        }
+        
+    
+    
+    
+    </script>
+	
+	
+	</body>
+		<script> 	$('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+        || location.hostname == this.hostname) {
+
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+           if (target.length) {
+             $('html,body').animate({
+                 scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
+    }
+}); </script>
+	
+	
+</html>
